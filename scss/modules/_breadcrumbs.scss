@@ -1,0 +1,63 @@
+#breadcrumbs {
+  padding: 10px 0 30px 0;
+    & ul,
+    & span[itemscope],
+    & span.current,
+    & a {
+    @extend %inline-block;
+  }
+  img {
+   height: 1.2em;
+   margin: 0;
+  }
+
+}
+  
+
+#breadcrumbs a, #breadcrumbs span.current {
+  position: relative;
+  font-size: 0.9em;
+  font-weight: bold;
+  height: 15px;
+  text-decoration: none;
+}
+
+#breadcrumbs a{  
+  color: lighten($text-color, 30%);
+  padding-right:  16px;
+    &:visited {
+
+    }
+    &:hover {
+      color: $link-color;
+      text-decoration: underline;
+        &:before {
+      content: '\276F';
+      color: lighten($text-color, 30%);
+    }
+    }
+    &:active {
+      color: #005595;
+    }
+    &:before {
+      content: '\276F';
+      height: 17px;
+      width: 5px;
+      position: absolute;
+      top: 0px;
+      right: -3px;
+    }
+}
+ 
+#breadcrumbs li li a, #breadcrumbs span.current {
+  padding-left:14px
+}
+#breadcrumbs ul  li span.current,
+#breadcrumbs ul li span.current:hover,
+#breadcrumbs ul li span.current:active {
+  color: lighten($text-color, 38%);
+  cursor: default;
+}
+#breadcrumbs span.current::before {
+  content: "";
+}
